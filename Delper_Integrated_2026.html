@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delper Ecom — GCCP & DPR Business Plan 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── ROOT TOKENS ─────────────────────────────────────────────────────────── */
+:root {
+  --navy:   #0D1B3E;
+  --navy2:  #0f1f33;
+  --navy3:  #132338;
+  --teal:   #028090;
+  --teal2:  #2ec4b6;
+  --mint:   #02C39A;
+  --gold:   #d4a843;
+  --gold-d: rgba(212,168,67,0.12);
+  --gold-l: #f0c96a;
+  --silver: #F4F7FA;
+  --lgrey:  #D1D9E0;
+  --dgrey:  #4A5568;
+  --muted:  #6b84a4;
+  --muted2: #94aac4;
+  --ice:    #cfe8ff;
+  --border: #1e3352;
+  --card:   #0f1f33;
+  --card2:  #132338;
+  --white:  #FFFFFF;
+  --green:  #065F46;
+  --text:   #e4edf8;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--navy); color: var(--text); font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; }
+
+/* ── NAVIGATION ─────────────────────────────────────────────────────────── */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(13,27,62,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(2,128,144,0.3);
+  display: flex; align-items: center; gap: 0;
+  padding: 0 2rem; min-height: 52px;
+  overflow-x: auto; white-space: nowrap;
+}
+.nav-brand {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px; font-weight: 800;
+  color: var(--gold); letter-spacing: 0.05em;
+  flex-shrink: 0; padding: 14px 20px 14px 0;
+  margin-right: 12px; border-right: 1px solid rgba(2,128,144,0.3);
+  text-decoration: none;
+}
+.nav-section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--mint); padding: 0 10px; flex-shrink: 0; opacity: 0.6;
+}
+.nav-links { display: flex; gap: 0; flex-shrink: 0; }
+.nav-links a, .nav-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); padding: 16px 13px;
+  text-decoration: none; transition: color 0.2s; flex-shrink: 0;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:hover, .nav-link:hover { color: var(--gold); border-bottom-color: var(--gold); }
+.nav-div { width: 1px; background: rgba(2,128,144,0.3); margin: 10px 4px; }
+
+/* ── CONFIDENTIAL BANNER ────────────────────────────────────────────────── */
+.banner {
+  background: var(--teal); color: var(--white);
+  text-align: center; padding: 0.55rem 2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+}
+
+/* ── SECTION BRIDGE HEADER ──────────────────────────────────────────────── */
+.doc-bridge {
+  background: linear-gradient(135deg, #060e1c 0%, #0a1628 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 3rem 2rem; text-align: center;
+}
+.bridge-label {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.bridge-label::before { content:''; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; animation: blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+.bridge-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--white); line-height: 1.1; margin-bottom: 0.6rem;
+}
+.bridge-title em { font-style: italic; color: var(--mint); }
+.bridge-sub { font-size: 14px; color: var(--muted2); max-width: 620px; margin: 0 auto; }
+
+/* ── HERO A (GCCP) ──────────────────────────────────────────────────────── */
+.hero-gccp {
+  min-height: 100vh; background: var(--navy);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 80px 2rem 4rem; position: relative; overflow: hidden;
+}
+.hero-gccp::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 50%, rgba(2,128,144,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 30%, rgba(2,195,154,0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 600; color: var(--mint);
+  letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.5rem;
+}
+.hero-title-gccp {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  color: var(--white); line-height: 1.0; text-align: center; margin-bottom: 1rem;
+}
+.hero-title-gccp em { font-style: italic; color: var(--mint); }
+.hero-sub-gccp {
+  font-size: 16px; color: var(--lgrey);
+  text-align: center; max-width: 640px; line-height: 1.6; margin-bottom: 3rem;
+}
+.terminal-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(2rem, 5vw, 4rem); font-weight: 600; color: var(--white);
+  text-align: center; margin-bottom: 0.4rem; letter-spacing: -0.02em;
+}
+.terminal-number span { color: var(--mint); }
+.terminal-label {
+  font-size: 12px; color: var(--dgrey); text-align: center;
+  letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3rem;
+}
+.hero-stats-strip {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 1px; width: 100%; max-width: 900px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(2,128,144,0.2);
+}
+.hero-stat {
+  background: rgba(13,27,62,0.8); padding: 1.2rem 1rem; text-align: center;
+}
+.hero-stat-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px; font-weight: 600; color: var(--mint);
+  display: block; margin-bottom: 0.3rem;
+}
+.hero-stat-label { font-size: 11px; color: var(--lgrey); line-height: 1.3; }
+
+/* ── HERO B (DPR) ───────────────────────────────────────────────────────── */
+.hero-dpr {
+  background: linear-gradient(135deg, #0a1628 0%, #0d2240 50%, #0a1628 100%);
+  padding: 72px 32px 60px; text-align: center;
+  border-bottom: 1px solid var(--border); position: relative; overflow: hidden;
+}
+.hero-dpr::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(212,168,67,.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-tag {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.hero-tag::before { content:''; width:5px; height:5px; background:var(--gold); border-radius:50%; animation:blink 2s ease-in-out infinite; }
+.hero-dpr h1 {
+  font-family: 'Syne', sans-serif; font-size: clamp(2.2rem,5vw,3.8rem);
+  font-weight: 800; letter-spacing: -.03em; line-height: 1.08; color: #fff; margin-bottom: 12px;
+}
+.hero-dpr h1 span { color: var(--gold); }
+.hero-sub-dpr { font-size: 15px; color: var(--muted2); max-width: 620px; margin: 0 auto 36px; line-height: 1.7; }
+.hero-conf {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 10px;
+}
+.hero-stats-dpr {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 2px;
+  background: var(--border); border: 1px solid var(--border);
+  border-radius: 14px; overflow: hidden; max-width: 900px; margin: 0 auto 32px;
+}
+.hs { background: var(--card); padding: 20px 24px; flex: 1; min-width: 130px; text-align: center; }
+.hs-val { font-family: 'Syne', sans-serif; font-size: 1.55rem; font-weight: 800; color: var(--gold); line-height: 1; letter-spacing: -.02em; }
+.hs-lbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 5px; }
+.qlinks {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+  max-width: 900px; margin: 0 auto; padding: 0 8px;
+}
+.qlink {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--teal2); background: rgba(46,196,182,.10); border: 1px solid rgba(46,196,182,.25);
+  border-radius: 20px; padding: 6px 14px; text-decoration: none; transition: all .2s;
+}
+.qlink:hover { background: rgba(46,196,182,.2); color: #fff; }
+
+/* ── SHARED LAYOUT ───────────────────────────────────────────────────────── */
+.page-light { background: var(--silver); }
+.page-dark { background: var(--navy); }
+
+/* GCCP-style sections */
+.section-gccp {
+  max-width: 900px; margin: 0 auto;
+  padding: 4rem 2rem; border-bottom: 1px solid var(--lgrey);
+}
+.section-gccp:last-child { border-bottom: none; }
+.section-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2rem; }
+.section-num {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--teal);
+  font-weight: 600; letter-spacing: 0.12em; flex-shrink: 0; padding-top: 4px;
+}
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--navy); line-height: 1.15;
+}
+.section-title em { font-style: italic; color: var(--teal); }
+.section-rule {
+  height: 2px; background: linear-gradient(to right, var(--teal), transparent);
+  margin-bottom: 2rem;
+}
+.page-light p { color: var(--dgrey); margin-bottom: 1.2rem; }
+.page-light p strong { color: var(--navy); font-weight: 600; }
+
+/* DPR-style sections */
+.page-dark section { padding: 56px 32px 0; max-width: 1200px; margin: 0 auto; }
+.sec-tag {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 12px;
+}
+.sec-tag::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.page-dark h2 {
+  font-family: 'Syne', sans-serif; font-size: 1.65rem; font-weight: 800;
+  letter-spacing: -.02em; color: #fff; margin-bottom: 6px;
+}
+.sec-sub { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+
+/* ── CARDS ──────────────────────────────────────────────────────────────── */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+.card2 { background: var(--card2); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+
+/* GCCP callout */
+.callout {
+  background: var(--navy); border-left: 3px solid var(--mint);
+  padding: 1.2rem 1.5rem; margin: 2rem 0;
+}
+.callout p { color: var(--lgrey); margin: 0; font-size: 14px; line-height: 1.6; }
+.callout p strong { color: var(--mint); }
+
+/* ── GRIDS ───────────────────────────────────────────────────────────────── */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+@media(max-width:900px){ .g4 { grid-template-columns:1fr 1fr; } }
+@media(max-width:680px){ .g2,.g3,.g4 { grid-template-columns:1fr; } }
+
+/* GCCP stat-grid */
+.stat-grid-gccp {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px; background: var(--lgrey); border: 1px solid var(--lgrey); margin: 1.5rem 0;
+}
+.stat-card-gccp { background: var(--white); padding: 1.2rem 1rem; text-align: center; }
+.stat-card-gccp.dark { background: var(--navy); }
+.stat-card-gccp-val {
+  font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 600;
+  color: var(--teal); display: block; margin-bottom: 0.4rem;
+}
+.stat-card-gccp.dark .stat-card-gccp-val { color: var(--mint); }
+.stat-card-gccp-label { font-size: 11px; color: var(--dgrey); line-height: 1.3; }
+.stat-card-gccp.dark .stat-card-gccp-label { color: var(--lgrey); }
+
+/* DPR stat cards */
+.stat-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 20px; text-align: center; position: relative; overflow: hidden;
+}
+.stat-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+.sc-gold::before { background: linear-gradient(90deg,var(--gold),rgba(212,168,67,.3)); }
+.sc-teal::before { background: linear-gradient(90deg,var(--teal2),rgba(46,196,182,.3)); }
+.sc-ice::before  { background: linear-gradient(90deg,var(--ice),rgba(207,232,255,.3)); }
+.stat-val { font-family: 'Syne', sans-serif; font-size: 1.7rem; font-weight: 800; letter-spacing: -.02em; line-height:1; margin-bottom:6px; }
+.stat-val.gold  { color: var(--gold); }
+.stat-val.teal  { color: var(--teal2); }
+.stat-val.ice   { color: var(--ice); }
+.stat-val.white { color: #fff; }
+.stat-lbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.stat-note { font-size: 11px; color: var(--muted2); margin-top: 4px; }
+
+/* ── TABLES ──────────────────────────────────────────────────────────────── */
+/* GCCP tables */
+.data-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 13px; }
+.data-table th {
+  background: var(--navy); color: var(--white); padding: 0.7rem 0.9rem;
+  text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.04em;
+}
+.data-table th:not(:first-child) { text-align: center; }
+.data-table td {
+  padding: 0.65rem 0.9rem; border-bottom: 1px solid var(--lgrey);
+  color: var(--dgrey); vertical-align: top;
+}
+.data-table td:not(:first-child) { text-align: center; }
+.data-table tr:nth-child(even) td { background: var(--white); }
+.data-table tr.total td { background: var(--navy); color: var(--mint); font-weight: 700; font-size: 13px; }
+.data-table td.bold { font-weight: 700; color: var(--navy); }
+.data-table td.dgreen { color: var(--green); font-weight: 700; }
+.data-table td.dteal  { color: var(--teal); font-weight: 700; }
+
+/* DPR tables */
+.tbl-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; }
+th {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted); padding: 11px 16px; text-align: left; background: var(--card2); border-bottom: 1px solid var(--border);
+}
+td { padding: 11px 16px; font-family: 'DM Mono', monospace; font-size: 12px; color: var(--text); border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(255,255,255,.02); }
+td.gold { color: var(--gold); font-weight: 700; }
+td.teal { color: var(--teal2); }
+td.ice  { color: var(--ice); }
+td.star { color: var(--gold-l); font-weight: 700; }
+
+/* ── GCCP TIMELINE ───────────────────────────────────────────────────────── */
+.timeline { position: relative; margin: 2rem 0; }
+.timeline::before { content:''; position:absolute; left:60px; top:0; bottom:0; width:2px; background:var(--lgrey); }
+.tl-item { display: flex; gap: 1.5rem; padding: 0 0 2rem 0; position: relative; }
+.tl-year { font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; color:var(--teal); width:52px; flex-shrink:0; padding-top:2px; text-align:right; }
+.tl-dot { width:12px; height:12px; border-radius:50%; background:var(--teal); flex-shrink:0; margin-top:5px; position:relative; z-index:1; box-shadow:0 0 0 3px var(--silver); }
+.tl-dot.mint { background: var(--mint); }
+.tl-content { flex: 1; }
+.tl-heading { font-weight:700; color:var(--navy); font-size:14px; margin-bottom:0.4rem; }
+.tl-body { font-size:13px; color:var(--dgrey); line-height:1.6; }
+.tl-numbers { display:flex; gap:1rem; margin-top:0.6rem; flex-wrap:wrap; }
+.tl-num { font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; color:var(--white); background:var(--teal); padding:0.2rem 0.6rem; }
+.tl-num.green { background: var(--green); }
+.tl-num.navy  { background: var(--navy); }
+
+/* ── GCCP LAYER STACK ────────────────────────────────────────────────────── */
+.layer-stack { margin: 1.5rem 0; }
+.layer-item { display:flex; align-items:stretch; margin-bottom:2px; }
+.layer-badge { width:36px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--white); }
+.layer-item:nth-child(1) .layer-badge { background:#0D6E7C; }
+.layer-item:nth-child(2) .layer-badge { background:#028090; }
+.layer-item:nth-child(3) .layer-badge { background:#029AAD; }
+.layer-item:nth-child(4) .layer-badge { background:#02B5C4; }
+.layer-item:nth-child(5) .layer-badge { background:#02C39A; }
+.layer-item:nth-child(6) .layer-badge { background:#00A87D; }
+.layer-item.total .layer-badge { background:var(--navy); }
+.layer-body { flex:1; background:var(--white); padding:0.6rem 1rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.layer-item.total .layer-body { background:var(--navy); }
+.layer-name { font-size:13px; font-weight:600; color:var(--navy); }
+.layer-item.total .layer-name { color:var(--mint); }
+.layer-func { font-size:12px; color:var(--dgrey); }
+.layer-item.total .layer-func { color:var(--lgrey); }
+.layer-fee { font-family:'JetBrains Mono',monospace; font-size:14px; font-weight:700; color:var(--green); flex-shrink:0; }
+.layer-item.total .layer-fee { color:var(--mint); font-size:18px; }
+
+/* ── GCCP BATCH GRID ─────────────────────────────────────────────────────── */
+.batch-grid { display:grid; grid-template-columns:1fr; gap:2px; margin:1.5rem 0; }
+.batch-row { display:grid; grid-template-columns:80px 80px 120px 1fr 100px 110px; gap:1px; background:var(--lgrey); }
+.batch-row.header { background:var(--navy); }
+.batch-cell { background:var(--white); padding:0.65rem 0.8rem; font-size:13px; color:var(--dgrey); }
+.batch-row.header .batch-cell { background:var(--navy); color:var(--white); font-weight:700; font-size:12px; letter-spacing:0.04em; }
+.batch-row:nth-child(even) .batch-cell { background:var(--silver); }
+.batch-row.total-row .batch-cell { background:var(--navy); color:var(--mint); font-weight:700; }
+.batch-cell.bold { font-weight:700; color:var(--navy); }
+.batch-cell.green { color:var(--green); font-weight:700; }
+
+/* ── GCCP TERMINAL SECTION ───────────────────────────────────────────────── */
+.terminal-section { background:var(--navy); padding:4rem 2rem; }
+.terminal-inner { max-width:900px; margin:0 auto; }
+.terminal-section .section-title { color:var(--white); }
+.terminal-section .section-num { color:var(--mint); }
+.terminal-section p { color:var(--lgrey); }
+.terminal-section p strong { color:var(--white); }
+.terminal-section .section-rule { background:linear-gradient(to right,var(--mint),transparent); }
+.terminal-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin:2rem 0; background:rgba(255,255,255,0.08); }
+.terminal-stat { padding:1.5rem 1rem; text-align:center; background:rgba(255,255,255,0.04); }
+.terminal-stat-val { font-family:'JetBrains Mono',monospace; font-size:28px; font-weight:600; color:var(--mint); display:block; margin-bottom:0.3rem; }
+.terminal-stat-label { font-size:12px; color:var(--lgrey); }
+.efficiency-table { width:100%; border-collapse:collapse; margin-top:2rem; font-size:13px; }
+.efficiency-table td { padding:0.7rem 1rem; border-bottom:1px solid rgba(255,255,255,0.08); color:var(--lgrey); }
+.efficiency-table td:first-child { color:var(--white); font-weight:500; }
+.efficiency-table td:last-child { color:var(--mint); font-weight:700; font-family:'JetBrains Mono',monospace; text-align:right; }
+
+/* ── DPR COMPONENTS ──────────────────────────────────────────────────────── */
+/* Mission block */
+.mission-block {
+  background: linear-gradient(135deg,rgba(212,168,67,.08),rgba(212,168,67,.02));
+  border: 1px solid rgba(212,168,67,.22); border-left: 3px solid var(--gold);
+  border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 20px;
+  font-size: 14px; color: #c8d8e8; line-height: 1.75;
+}
+.mission-block strong { color: var(--gold); }
+
+/* Pillars */
+.pillars { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:4px; }
+.pillar { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px; position:relative; overflow:hidden; }
+.pillar::before { content:'◈'; position:absolute; top:14px; right:16px; font-size:1.2rem; color:rgba(212,168,67,.2); }
+.pillar-title { font-size:13px; font-weight:700; color:var(--gold); margin-bottom:6px; }
+.pillar-text { font-size:12px; color:var(--muted2); line-height:1.6; }
+
+/* 6-layer chain (DPR style) */
+.chain { display:flex; flex-direction:column; gap:0; }
+.chain-row { display:grid; grid-template-columns:30px 120px 1fr 80px; align-items:center; gap:12px; padding:12px 16px; background:var(--card2); border:1px solid var(--border); transition:background .18s; }
+.chain-row:first-child { border-radius:10px 10px 0 0; }
+.chain-row:last-child  { border-radius:0 0 10px 10px; }
+.chain-row+.chain-row  { border-top:none; }
+.chain-row:hover { background:#162840; }
+.cr-num { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); text-align:center; }
+.cr-name { font-size:12px; font-weight:600; color:var(--text); }
+.cr-bar-bg { height:7px; background:var(--border); border-radius:4px; overflow:hidden; }
+.cr-bar-fill { height:100%; border-radius:4px; background:linear-gradient(90deg,var(--navy3),var(--gold)); }
+.cr-mult { font-family:'DM Mono',monospace; font-size:11px; color:var(--gold); text-align:right; }
+
+/* Charges */
+.charges { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media(max-width:680px){ .charges { grid-template-columns:1fr; } }
+.charge-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px; border-top:3px solid; }
+.cc1 { border-top-color:var(--gold); }
+.cc2 { border-top-color:var(--teal2); }
+.cc3 { border-top-color:#a78bfa; }
+.cc4 { border-top-color:#fb7185; }
+.ch-num { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+.ch-title { font-size:13px; font-weight:700; color:#fff; margin-bottom:4px; }
+.ch-rate { font-family:'Syne',sans-serif; font-size:1.3rem; font-weight:800; color:var(--gold); margin-bottom:4px; }
+.ch-desc { font-size:11px; color:var(--muted); line-height:1.5; }
+
+/* GTM phases */
+.phases { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
+.phase-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px; position:relative; overflow:hidden; }
+.phase-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--gold); }
+.ph-num  { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; color:rgba(212,168,67,.2); line-height:1; margin-bottom:4px; }
+.ph-title { font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); margin-bottom:2px; }
+.ph-period { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); margin-bottom:2px; }
+.ph-score  { font-family:'DM Mono',monospace; font-size:10px; color:var(--teal2); margin-bottom:12px; }
+
+/* Licensing */
+.lic-list { display:flex; flex-direction:column; gap:8px; }
+.lic-row { display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:12px; padding:10px 14px; background:var(--card2); border:1px solid var(--border); border-radius:8px; }
+.lic-name { font-size:12px; font-weight:600; color:var(--text); }
+.lic-period { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); }
+.lic-phase { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); background:var(--gold-d); border:1px solid rgba(212,168,67,.2); border-radius:4px; padding:2px 8px; }
+
+/* Risks */
+.risk-list { display:flex; flex-direction:column; gap:12px; }
+.risk-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px; display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:start; }
+.r-id { font-family:'Syne',sans-serif; font-size:1.2rem; font-weight:800; color:var(--gold); min-width:32px; }
+.r-title { font-size:13px; font-weight:700; color:#fff; margin-bottom:6px; }
+.r-risk { font-size:12px; color:var(--muted2); line-height:1.5; margin-bottom:8px; }
+.r-mit-lbl { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.12em; text-transform:uppercase; color:var(--teal2); margin-bottom:3px; }
+.r-mit { font-size:12px; color:var(--muted2); line-height:1.5; }
+.r-badge { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.1em; text-transform:uppercase; border-radius:5px; padding:3px 9px; white-space:nowrap; align-self:start; }
+.rb-high { color:#fb7185; background:rgba(251,113,133,.1); border:1px solid rgba(251,113,133,.25); }
+.rb-med  { color:var(--gold); background:var(--gold-d); border:1px solid rgba(212,168,67,.25); }
+.rb-low  { color:var(--teal2); background:rgba(46,196,182,.10); border:1px solid rgba(46,196,182,.25); }
+
+/* Team */
+.team-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; }
+.team-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px; }
+.tc-role { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
+.tc-desc { font-size:12px; color:var(--muted2); line-height:1.5; }
+
+/* Partners */
+.partner-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; }
+.partner-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px; }
+.pc-title { font-size:12px; font-weight:700; color:var(--teal2); margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid var(--border); }
+
+/* Bullets */
+.blist { display:flex; flex-direction:column; gap:8px; margin-top:10px; }
+.bli { display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--muted2); line-height:1.5; }
+.bli::before { content:'▸'; color:var(--gold); flex-shrink:0; margin-top:1px; font-size:11px; }
+
+/* Summary grid */
+.summary-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:2px; background:var(--border); border-radius:14px; overflow:hidden; border:1px solid var(--border); margin-bottom:24px; }
+.sg-cell { background:var(--card); padding:18px 16px; }
+.sg-lbl { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin-bottom:7px; }
+.sg-val { font-family:'Syne',sans-serif; font-size:1.25rem; font-weight:800; line-height:1; }
+.sg-val.gold  { color:var(--gold); }
+.sg-val.teal  { color:var(--teal2); }
+.sg-val.ice   { color:var(--ice); }
+.sg-val.white { color:#fff; }
+.sg-note { font-size:10px; color:var(--muted2); margin-top:4px; }
+
+/* ETH mech */
+.mech-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+.mech-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px; display:flex; gap:12px; align-items:flex-start; }
+.mc-num { font-family:'Syne',sans-serif; font-size:1.5rem; font-weight:800; color:rgba(212,168,67,.3); line-height:1; flex-shrink:0; }
+.mc-title { font-size:12px; font-weight:700; color:var(--gold); margin-bottom:5px; }
+.mc-text { font-size:11px; color:var(--muted2); line-height:1.55; }
+
+/* TOC */
+.toc-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:12px; margin-top:20px; }
+.toc-item { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; display:flex; gap:14px; align-items:flex-start; text-decoration:none; transition:all .2s; }
+.toc-item:hover { background:var(--card2); border-color:var(--gold); transform:translateY(-1px); }
+.toc-num { font-family:'Syne',sans-serif; font-size:1.5rem; font-weight:800; color:var(--gold); line-height:1; flex-shrink:0; min-width:32px; }
+.toc-title { font-size:13px; font-weight:600; color:#fff; margin-bottom:3px; }
+.toc-desc { font-size:11px; color:var(--muted); line-height:1.5; }
+
+/* Investment case */
+.inv-list { display:flex; flex-direction:column; gap:12px; margin-top:8px; }
+.inv-item { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; display:flex; gap:14px; align-items:flex-start; }
+.inv-n { font-family:'Syne',sans-serif; font-size:1.4rem; font-weight:800; color:rgba(212,168,67,.3); flex-shrink:0; line-height:1; min-width:28px; }
+.inv-title { font-size:13px; font-weight:700; color:var(--gold); margin-bottom:4px; }
+.inv-desc { font-size:12px; color:var(--muted2); line-height:1.5; }
+
+/* Links grid */
+.links-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; margin-top:20px; }
+.ext-link { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; text-decoration:none; transition:all .2s; display:flex; align-items:center; gap:14px; }
+.ext-link:hover { background:var(--card2); border-color:var(--teal2); transform:translateY(-1px); }
+.el-ico { width:36px; height:36px; border-radius:8px; background:rgba(46,196,182,.10); border:1px solid rgba(46,196,182,.2); display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+.el-title { font-size:13px; font-weight:600; color:#fff; margin-bottom:2px; }
+.el-url { font-family:'DM Mono',monospace; font-size:9px; color:var(--muted); letter-spacing:.05em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:180px; }
+
+/* Badges */
+.badge { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.12em; text-transform:uppercase; border-radius:5px; padding:3px 10px; display:inline-block; }
+.badge-gold { color:var(--gold); background:var(--gold-d); border:1px solid rgba(212,168,67,.22); }
+.badge-teal { color:var(--teal2); background:rgba(46,196,182,.10); border:1px solid rgba(46,196,182,.22); }
+.check { color:var(--teal2); }
+.uplift-row td:last-child { color:var(--teal2); }
+
+/* ── DISCLAIMER & FOOTER ─────────────────────────────────────────────────── */
+.disc { background:rgba(255,255,255,.03); border:1px solid var(--border); border-radius:14px; padding:28px; margin-top:40px; }
+.disc h3 { font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; color:var(--muted2); margin-bottom:16px; }
+.disc-sec { margin-bottom:14px; }
+.disc-sec h4 { font-family:'DM Mono',monospace; font-size:10px; font-weight:600; color:var(--muted2); margin-bottom:4px; text-transform:uppercase; letter-spacing:.06em; }
+.disc-sec p { font-size:12px; color:var(--muted); line-height:1.7; }
+
+.closing {
+  background: var(--navy); border-top: 1px solid rgba(2,195,154,0.2);
+  padding: 3rem 2rem; text-align: center;
+}
+.closing-quote {
+  font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem,3vw,2rem);
+  color: var(--white); max-width: 700px; margin: 0 auto 2rem; line-height: 1.4;
+}
+.closing-quote em { color: var(--mint); font-style: italic; }
+.closing-meta { font-size:11px; color:var(--dgrey); letter-spacing:0.06em; line-height:1.8; }
+.closing-meta a { color:var(--teal); text-decoration:none; }
+
+footer {
+  border-top: 1px solid var(--border); padding: 24px; text-align: center;
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .hero-stats-strip { grid-template-columns: repeat(2,1fr); }
+  .batch-row { grid-template-columns: 1fr 1fr; }
+  .batch-cell:nth-child(n+3) { display: none; }
+  .terminal-stats { grid-template-columns: 1fr; }
+  .risk-card { grid-template-columns: auto 1fr; }
+  .r-badge { grid-column: 2; }
+  nav { padding: 0 1rem; }
+}
+@media print {
+  nav { display: none; }
+  .hero-gccp { min-height: auto; padding-top: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ NAVIGATION ═══════════════════════════════════════ -->
+<nav>
+  <a class="nav-brand" href="#gccp-hero">DELPER ◈ 2026</a>
+  <!-- GCCP links -->
+  <span class="nav-section-label">GCCP</span>
+  <div class="nav-links">
+    <a href="#seed">Seed</a>
+    <a href="#y4">Year 4</a>
+    <a href="#land">Land</a>
+    <a href="#ipo">IPO</a>
+    <a href="#build">Build</a>
+    <a href="#terminal">Terminal</a>
+  </div>
+  <div class="nav-div"></div>
+  <!-- DPR links -->
+  <span class="nav-section-label">DPR</span>
+  <div class="nav-links">
+    <a href="#toc">Contents</a>
+    <a href="#exec">Executive</a>
+    <a href="#problem">Problem</a>
+    <a href="#product">Product</a>
+    <a href="#model">Model</a>
+    <a href="#gtm">GTM</a>
+    <a href="#financials">Financials</a>
+    <a href="#regulatory">Regulatory</a>
+    <a href="#risk">Risk</a>
+    <a href="#team">Team</a>
+    <a href="#summary">Summary</a>
+    <a href="#investment">Investment</a>
+    <a href="#links">Links</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════ PART I · GCCP ════════════════════════════════════ -->
+
+<!-- GCCP HERO -->
+<section class="hero-gccp" id="gccp-hero">
+  <div class="hero-eyebrow">Delper Ecom Holdings Pte Ltd · Singapore</div>
+  <h1 class="hero-title-gccp">From <em>$66.5M</em><br>to the World</h1>
+  <p class="hero-sub-gccp">
+    A 17-year programme from a single trade-profit seed to 2,200 smart cities,
+    6 billion residents, and $55 trillion in annual income.
+  </p>
+  <div class="terminal-number"><span>$1,100</span> Trillion</div>
+  <div class="terminal-label">Terminal Enterprise Value · Year 17 · 20× Revenue</div>
+  <div class="hero-stats-strip">
+    <div class="hero-stat"><span class="hero-stat-val">$66.5M</span><div class="hero-stat-label">Seed capital from trade profits</div></div>
+    <div class="hero-stat"><span class="hero-stat-val">6B</span><div class="hero-stat-label">Users onboarded by Year 4</div></div>
+    <div class="hero-stat"><span class="hero-stat-val">$10.62T</span><div class="hero-stat-label">Year 4 annual income</div></div>
+    <div class="hero-stat"><span class="hero-stat-val">2,200</span><div class="hero-stat-label">Smart cities by Year 17</div></div>
+    <div class="hero-stat"><span class="hero-stat-val">531,000×</span><div class="hero-stat-label">Return on seed capital</div></div>
+  </div>
+</section>
+
+<!-- GCCP PAGE BODY -->
+<div class="page-light">
+  <div class="banner">CONFIDENTIAL — NOT FOR REDISTRIBUTION · For institutional discussion purposes only · delperecom.com · ahanainvestments.com</div>
+
+  <!-- 01 SEED -->
+  <section class="section-gccp" id="seed">
+    <div class="section-header">
+      <div class="section-num">01 · SEED</div>
+      <h2 class="section-title">$66.5 Million — <em>Not a Penny of Venture Equity</em></h2>
+    </div>
+    <div class="section-rule"></div>
+    <p>The programme begins with <strong>$66.5 million raised entirely from trade profits</strong> — the operating surplus generated through Ahana Investments in the UAE, where personal income from trade is received at 0% corporate and personal tax. No venture capital. No institutional dilution. No public market obligation. The promoter enters the capital markets with <strong>100% of the 10 trillion authorised shares intact.</strong></p>
+    <p>The seed funds: Singapore holding company incorporation · provisional patent on the 6-layer recursive algorithm · Hyperledger Fabric across three nodes (Singapore, UAE, India) · FinCEN MSB registration · VARA sandbox application · legal opinions from Debevoise, Linklaters, AZB, Al Tamimi, WongPartnership, and Clifford Chance · L&T Kalburgi feasibility study · SBLC term sheet with DBS Singapore · 500 pilot merchants from Radiant Synage in Month 1.</p>
+    <p>The CEO converts the $66.5M seed into <strong>$103.3M total available capital</strong> through the SBLC bridge: $54.4M SPV credit line from DBS against the rated SBLC, plus $48.8M seed reserve — 55% more than the target, zero additional equity dilution.</p>
+    <div class="stat-grid-gccp">
+      <div class="stat-card-gccp"><span class="stat-card-gccp-val">55.4M</span><div class="stat-card-gccp-label">Users · End Year 1</div></div>
+      <div class="stat-card-gccp"><span class="stat-card-gccp-val">$26M</span><div class="stat-card-gccp-label">Net profit · Year 1 · Tax-free</div></div>
+      <div class="stat-card-gccp dark"><span class="stat-card-gccp-val">$103.3M</span><div class="stat-card-gccp-label">Total capital from $66.5M seed via SBLC</div></div>
+    </div>
+  </section>
+
+  <!-- 02 YEAR 2 -->
+  <section class="section-gccp" id="y2">
+    <div class="section-header">
+      <div class="section-num">02 · YEAR 2</div>
+      <h2 class="section-title">The <em>$1 Billion</em> Trade Profit Raise</h2>
+    </div>
+    <div class="section-rule"></div>
+    <p>In Year 2 — having demonstrated 55 million users, live token economics, and $26M in tax-free profit — the programme raises <strong>$1 billion from trade profits</strong>. Not venture capital. Not NFT speculation. Commercial surplus, tax-free from the UAE, recycled into the Singapore holding company as equity.</p>
+    <table class="data-table">
+      <thead><tr><th>Allocation</th><th>Amount</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">Technology Acceleration</td><td class="dteal">$400M</td><td>Hyperledger: 3 → 27 nodes across 9 countries · CertiK + Trail of Bits audit · SAP Ariba B2B integration</td></tr>
+        <tr><td class="bold">Global Merchant Expansion</td><td class="dteal">$300M</td><td>50,000 → 500,000 merchants across India, UAE, Southeast Asia, East Africa</td></tr>
+        <tr><td class="bold">Regulatory Filing Programme</td><td class="dteal">$200M</td><td>S-1 (SEC) · DRHP (SEBI) · FCA Prospectus · SGX listing — all four exchanges ready for Year 5 IPO</td></tr>
+        <tr><td class="bold">NFT Programme Seed</td><td class="dteal">$100M</td><td>30,120 utility franchise NFTs — raising $1B in Year 3</td></tr>
+        <tr class="total"><td>TOTAL DEPLOYED</td><td>$1.000B</td><td>Year 2 result: 277M users · $3.35B net profit · $6.8B ETH pool</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 03 YEAR 3 -->
+  <section class="section-gccp" id="y3">
+    <div class="section-header">
+      <div class="section-num">03 · YEAR 3</div>
+      <h2 class="section-title">Onboarding Acceleration &amp; <em>NFT Raise</em></h2>
+    </div>
+    <div class="section-rule"></div>
+    <p>Year 3 is the year of physical scale. The <strong>Kalburgi 500-acre AI-robotic food processing facility</strong> becomes operational, making the Delper marketplace physically real for hundreds of millions of Indian users. The platform becomes a full supply chain ecosystem across all 6 layers simultaneously.</p>
+    <p>The $1 billion NFT raise completes. 30,120 franchise NFT holders — each a motivated distribution partner with a financial incentive to onboard merchants and users within their licensed territory — become the most powerful ground-level distribution network in the programme.</p>
+    <div class="callout">
+      <p><strong>Three-year pre-IPO total:</strong> $66.5M seed + $1B trade raise + $1B NFT = <strong>$2.07B total external input.</strong> Against this: $13B cumulative tax-free profit · 831M users · $39B ETH pool · Zero venture equity · Zero IPO dilution · 100% promoter control intact.</p>
+    </div>
+  </section>
+
+  <!-- 04 YEAR 4 -->
+  <section class="section-gccp" id="y4">
+    <div class="section-header">
+      <div class="section-num">04 · YEAR 4</div>
+      <h2 class="section-title">6 Billion Users · <em>$10.62 Trillion</em></h2>
+    </div>
+    <div class="section-rule"></div>
+    <p>The transition from 831 million to 6 billion users is driven by one irreducible fact: <strong>Delper pays users $247 per month.</strong> At $2,964 per year — exceeding per capita income in 47 countries — onboarding is not a marketing challenge. It is a financial inevitability.</p>
+    <table class="data-table">
+      <thead><tr><th>Revenue Stream</th><th>Mechanism</th><th>Monthly</th><th>Annual</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">Platform Revenue</td><td>6B users × $83.33/month (ads, surveys, token fees, data)</td><td class="dteal">$500B</td><td class="dgreen">$6.000T</td></tr>
+        <tr><td class="bold">Token Fees (6 Layers)</td><td>70% of $110T GDP × 6 layers × 1% per layer</td><td class="dteal">$385B</td><td class="dgreen">$4.620T</td></tr>
+        <tr class="total"><td>TOTAL YEAR 4 ★</td><td>Pure digital income — zero hard asset required</td><td>$885B/mo</td><td>$10.620T/yr</td></tr>
+      </tbody>
+    </table>
+    <h3 style="font-family:'DM Serif Display',serif;color:var(--navy);font-size:1.2rem;margin:2rem 0 1rem;">The 6-Layer Token Fee Stack</h3>
+    <p style="font-size:13px;color:var(--dgrey);margin-bottom:1rem;">Every dollar of global GDP flowing through the Delper ecosystem passes through 6 distinct layers. Each charges 1%. Total effective fee: 6% on $77T = $4.62T annually.</p>
+    <div class="layer-stack">
+      <div class="layer-item"><div class="layer-badge">L1</div><div class="layer-body"><div><div class="layer-name">Producer / Farmer / Manufacturer</div><div class="layer-func">Raw goods procurement payments in DPR · $77T volume</div></div><div class="layer-fee">$0.77T</div></div></div>
+      <div class="layer-item"><div class="layer-badge">L2</div><div class="layer-body"><div><div class="layer-name">Processor / Transformer</div><div class="layer-func">Inter-business B2B settlement · $77T volume</div></div><div class="layer-fee">$0.77T</div></div></div>
+      <div class="layer-item"><div class="layer-badge">L3</div><div class="layer-body"><div><div class="layer-name">Distributor / Wholesaler</div><div class="layer-func">Logistics node clearing · $77T volume</div></div><div class="layer-fee">$0.77T</div></div></div>
+      <div class="layer-item"><div class="layer-badge">L4</div><div class="layer-body"><div><div class="layer-name">Retailer / Merchant</div><div class="layer-func">Point-of-sale DPR acceptance · $77T volume</div></div><div class="layer-fee">$0.77T</div></div></div>
+      <div class="layer-item"><div class="layer-badge">L5</div><div class="layer-body"><div><div class="layer-name">Consumer / End User</div><div class="layer-func">$247/month earn-and-spend redemption · $77T volume</div></div><div class="layer-fee">$0.77T</div></div></div>
+      <div class="layer-item"><div class="layer-badge">L6</div><div class="layer-body"><div><div class="layer-name">Platform / Smart Infrastructure</div><div class="layer-func">Smart contract settlement + data monetisation · $77T volume</div></div><div class="layer-fee">$0.77T</div></div></div>
+      <div class="layer-item total"><div class="layer-badge">★</div><div class="layer-body"><div><div class="layer-name">Total · 6 Toll Points on Every Dollar of GDP</div><div class="layer-func">$462T total transaction volume processed</div></div><div class="layer-fee">$4.62T</div></div></div>
+    </div>
+    <div class="callout">
+      <p>From Year 4 income: <strong>$7.5T deployed immediately</strong> to begin construction of the first 50 smart cities at $150B each. <strong>$3.12T retained</strong> as the opening balance of the global land acquisition fund.</p>
+    </div>
+  </section>
+
+  <!-- 05 LAND -->
+  <section class="section-gccp" id="land">
+    <div class="section-header">
+      <div class="section-num">05 · LAND</div>
+      <h2 class="section-title">The <em>$110.62 Trillion</em> Land Mandate</h2>
+    </div>
+    <div class="section-rule"></div>
+    <p>Over Years 4 through 14, cumulative platform and token fee income reaches <strong>$110.62 trillion.</strong> The strategic decision is singular and permanent: use this cumulative digital income to acquire shovel-ready, permitted land for all 2,200 cities globally — before the IPO launches.</p>
+    <table class="data-table">
+      <thead><tr><th>Land Programme</th><th>Calculation</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">Land cost per city</td><td>Acquisition + permissions + clearances (12% of $150B)</td><td class="dteal">$18B</td></tr>
+        <tr><td class="bold">Total land: 2,200 cities</td><td>2,200 × $18B</td><td class="dteal">$39.6T</td></tr>
+        <tr><td class="bold">Cumulative digital revenue pool</td><td>Y4–Y14 platform + token fees compounding</td><td class="dgreen">$110.62T</td></tr>
+        <tr class="total"><td>Balance after land purchase</td><td>Pre-construction civil works + working capital globally</td><td>$71.02T</td></tr>
+      </tbody>
+    </table>
+    <p>The consequence is permanent. By IPO launch, Delper Ecom is not pitching a plan to build 2,200 cities. It is presenting <strong>2,200 sites legally owned, permitted, shovel-ready, and partially pre-tenanted</strong> across 60 countries. No competitor can assemble 11 million acres of permitted urban development land globally in any reasonable timeframe.</p>
+    <h3 style="font-family:'DM Serif Display',serif;color:var(--navy);font-size:1.2rem;margin:2rem 0 1rem;">Industrial Pre-Bookings — $990B Contracted Before the IPO</h3>
+    <table class="data-table">
+      <thead><tr><th>Pre-Booking Model</th><th>Per City / Year</th><th>× 2,200 Cities</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">Total rental income per city</td><td>$15B (10% × $150B)</td><td class="dteal">$33T/yr</td></tr>
+        <tr><td class="bold">Industrial/logistics share (10%)</td><td>$1.5B/city/yr</td><td class="dteal">$3.3T/yr</td></tr>
+        <tr class="total"><td>30% pre-contracted to anchor tenants</td><td>$450M/city/yr</td><td>$990B/yr · legally binding</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <p><strong>For institutional investors:</strong> Pre-contracted $990B/yr income + $10.62T digital revenue + 2,200 shovel-ready sites = <strong>the IPO is a valuation event, not a fundraising risk.</strong></p>
+    </div>
+  </section>
+
+  <!-- 06 IPO -->
+  <section class="section-gccp" id="ipo">
+    <div class="section-header">
+      <div class="section-num">06 · IPO</div>
+      <h2 class="section-title">Year 5 — <em>$75 Trillion</em> on Five Exchanges</h2>
+    </div>
+    <div class="section-rule"></div>
+    <p>The IPO launches in Year 5 cross-listed on <strong>NASDAQ · BSE · NSE · LSE · SGX.</strong> It raises $75 trillion at a $750 trillion market capitalisation — 10× NAV of 500 committed cities at $150B each, reflecting the platform income multiple, the pre-contracted industrial tenant base, the 6 billion captive users, and the irreplaceable global land position. Float: 10% of 10 trillion shares. Promoter retains 60% equity and 93.5% permanent voting control.</p>
+    <table class="data-table">
+      <thead><tr><th>Year 5 Income Stream</th><th>Annual</th><th>Monthly</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">Platform fees (6.6B users × $83.33/mo)</td><td class="dgreen">$6.600T</td><td class="dteal">$550B</td></tr>
+        <tr><td class="bold">Token fees (1% × 6L × 80% GDP)</td><td class="dgreen">$5.465T</td><td class="dteal">$455B</td></tr>
+        <tr><td class="bold">City rental — 50 cities (Year 4 batch)</td><td class="dgreen">$0.750T</td><td class="dteal">$62.5B</td></tr>
+        <tr class="total"><td>TOTAL YEAR 5 ★</td><td>$19.565T/yr (+84% vs Y4)</td><td>$1.630T/mo</td></tr>
+      </tbody>
+    </table>
+    <div class="stat-grid-gccp">
+      <div class="stat-card-gccp"><span class="stat-card-gccp-val">$293T</span><div class="stat-card-gccp-label">Conservative valuation (15×)</div></div>
+      <div class="stat-card-gccp dark"><span class="stat-card-gccp-val">$391T</span><div class="stat-card-gccp-label">Base valuation (20×)</div></div>
+      <div class="stat-card-gccp"><span class="stat-card-gccp-val">$587T</span><div class="stat-card-gccp-label">Premium valuation (30×)</div></div>
+      <div class="stat-card-gccp dark"><span class="stat-card-gccp-val">$234T</span><div class="stat-card-gccp-label">Promoter stake at base (60%)</div></div>
+    </div>
+  </section>
+
+  <!-- 07 BUILD -->
+  <section class="section-gccp" id="build">
+    <div class="section-header">
+      <div class="section-num">07 · BUILD</div>
+      <h2 class="section-title">Five Batches · <em>17 Years</em> · 3 Years Each</h2>
+    </div>
+    <div class="section-rule"></div>
+    <p>Because all 2,200 city sites are already owned, permitted, and shovel-ready from cumulative platform revenue, each construction batch requires only <strong>3 years</strong> — not 5 to 7. Land acquisition, planning permission, and environmental clearance are already complete. L&T mobilises across all sites simultaneously. The programme completes in Year 17 — <strong>18 years ahead of the original 35-year schedule.</strong></p>
+    <div class="batch-grid">
+      <div class="batch-row header">
+        <div class="batch-cell">Batch</div><div class="batch-cell">Cities</div>
+        <div class="batch-cell">Period</div><div class="batch-cell">Capital Source</div>
+        <div class="batch-cell">Ops From</div><div class="batch-cell">Rental Added</div>
+      </div>
+      <div class="batch-row"><div class="batch-cell bold">Batch 0</div><div class="batch-cell">50</div><div class="batch-cell">Y4–Y7</div><div class="batch-cell">$7.5T from Year 4 digital revenue</div><div class="batch-cell green">Y7</div><div class="batch-cell green">$750B/yr</div></div>
+      <div class="batch-row"><div class="batch-cell bold">Batch 1</div><div class="batch-cell">500</div><div class="batch-cell">Y5–Y8</div><div class="batch-cell">$75T IPO proceeds</div><div class="batch-cell green">Y8</div><div class="batch-cell green">$7.5T/yr</div></div>
+      <div class="batch-row"><div class="batch-cell bold">Batch 2</div><div class="batch-cell">500</div><div class="batch-cell">Y8–Y11</div><div class="batch-cell">FPO1 (liquidity) + $20T+/yr reinvested ops</div><div class="batch-cell green">Y11</div><div class="batch-cell green">$7.5T/yr</div></div>
+      <div class="batch-row"><div class="batch-cell bold">Batch 3</div><div class="batch-cell">500</div><div class="batch-cell">Y11–Y14</div><div class="batch-cell">FPO2 (crystallisation) + $29T+/yr reinvested ops</div><div class="batch-cell green">Y14</div><div class="batch-cell green">$7.5T/yr</div></div>
+      <div class="batch-row"><div class="batch-cell bold">Batch 4</div><div class="batch-cell">650</div><div class="batch-cell">Y14–Y17</div><div class="batch-cell">FPO3 (sovereign wealth) + $39T+/yr reinvested ops</div><div class="batch-cell green">Y17</div><div class="batch-cell green">$9.75T/yr</div></div>
+      <div class="batch-row total-row"><div class="batch-cell">★ TOTAL</div><div class="batch-cell">2,200</div><div class="batch-cell">Y4–Y17</div><div class="batch-cell">Digital income + IPO + 3 FPOs</div><div class="batch-cell">Y17</div><div class="batch-cell">$33T/yr</div></div>
+    </div>
+    <p style="margin-top:1.5rem;color:var(--dgrey);">FPO1 (Y8) · FPO2 (Y11) · FPO3 (Y14) are <strong style="color:var(--navy)">market crystallisation events, not funding necessities.</strong> By each trigger date, operating cash from rental plus platform and token fees already covers the next batch in full. The FPOs exist to allow global exchanges and sovereign wealth funds — PIF, ADIA, GIC, Temasek, CPPIB — to take positions in a programme that is already cashflow positive by a multiple of 400× its annual construction requirement.</p>
+  </section>
+</div>
+
+<!-- 08 TERMINAL -->
+<section class="terminal-section" id="terminal">
+  <div class="terminal-inner">
+    <div class="section-header">
+      <div class="section-num">08 · TERMINAL</div>
+      <h2 class="section-title">Year 17 — <em>The Landlord of the World</em></h2>
+    </div>
+    <div class="section-rule"></div>
+    <p>All 2,200 cities operational. Three income streams in perpetual steady state. No further construction. No further FPO. No further dilution. The programme completes 18 years ahead of schedule, entirely because $66.5 million in trade profit discipline and the deployment of digital revenue to secure global land before the IPO <strong>removed every construction delay from the critical path.</strong></p>
+    <div class="terminal-stats">
+      <div class="terminal-stat"><span class="terminal-stat-val">$22T/yr</span><div class="terminal-stat-label">Platform + Token Fees</div></div>
+      <div class="terminal-stat"><span class="terminal-stat-val">$33T/yr</span><div class="terminal-stat-label">City Rental · 2,200 Cities</div></div>
+      <div class="terminal-stat"><span class="terminal-stat-val">$55T/yr</span><div class="terminal-stat-label">Total Annual Income</div></div>
+      <div class="terminal-stat"><span class="terminal-stat-val">$1,100T</span><div class="terminal-stat-label">Enterprise Value · 20×</div></div>
+      <div class="terminal-stat"><span class="terminal-stat-val">$660T</span><div class="terminal-stat-label">Promoter Stake · 60%</div></div>
+      <div class="terminal-stat"><span class="terminal-stat-val">$990B/yr</span><div class="terminal-stat-label">Pre-contracted industrial rental · secured Year 4</div></div>
+    </div>
+    <table class="efficiency-table">
+      <tr><td>Total pre-IPO external capital input</td><td>$2.07B</td></tr>
+      <tr><td>Terminal enterprise value</td><td>$1,100T</td></tr>
+      <tr><td>Return multiple on seed capital</td><td>531,000×</td></tr>
+      <tr><td>Years to completion</td><td>17 (vs 35-year original plan)</td></tr>
+      <tr><td>Time saved by pre-buying land from digital revenue</td><td>18 years</td></tr>
+      <tr><td>Pre-contracted industrial rental locked in Year 4</td><td>$990B/yr perpetual</td></tr>
+      <tr><td>Cities ever sold</td><td>Zero — held in perpetuity</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════ BRIDGE ════════════════════════════════════════════ -->
+<div class="doc-bridge">
+  <div class="bridge-label">Section II — Protocol Layer</div>
+  <h2 class="bridge-title">Dual Reward <em>Protocol</em></h2>
+  <p class="bridge-sub">The blockchain-native settlement and loyalty engine that powers every transaction across the Delper ecosystem — transforming POS and supply chain payments into a self-compounding ETH-backed reward network.</p>
+</div>
+
+<!-- ═══════════════════ PART II · DPR ════════════════════════════════════ -->
+
+<!-- DPR HERO -->
+<div class="hero-dpr" id="dpr-hero">
+  <div class="hero-tag">Cryptocard Global · Confidential · June 2026</div>
+  <h1>Dual Reward <span>Protocol</span></h1>
+  <p class="hero-sub-dpr">Blockchain-native loyalty and settlement protocol transforming every POS transaction and supply chain payment into a self-compounding reward ecosystem backed by ETH.</p>
+  <div class="hero-stats-dpr">
+    <div class="hs"><div class="hs-val">$306.0B</div><div class="hs-lbl">Monthly Charges Y0</div></div>
+    <div class="hs"><div class="hs-val">$327.40</div><div class="hs-lbl">Y5 Token Price</div></div>
+    <div class="hs"><div class="hs-val">1,559×</div><div class="hs-lbl">Return from $0.21 Seed</div></div>
+    <div class="hs"><div class="hs-val">$17.51T</div><div class="hs-lbl">5-Year ETH Pool</div></div>
+    <div class="hs"><div class="hs-val">$4.38T</div><div class="hs-lbl">5-Year Revenue</div></div>
+    <div class="hs"><div class="hs-val">$621.8B</div><div class="hs-lbl">3-Year Tax Saved</div></div>
+  </div>
+  <div class="qlinks">
+    <a class="qlink" href="http://www.delperecom.com" target="_blank">🌐 Delper Ecom</a>
+    <a class="qlink" href="https://gkbharta44-code.github.io/Delper-Ecom-/" target="_blank">⚙️ Business Process</a>
+    <a class="qlink" href="https://marketplace.delperecom.com/marketplace.html" target="_blank">📊 Group Dashboard</a>
+    <a class="qlink" href="https://gkbharta44-code.github.io/Master/" target="_blank">🗺 32-Year Roadmap</a>
+    <a class="qlink" href="https://play.google.com/store/apps/details?id=com.delper.ecom.app" target="_blank">📱 App</a>
+    <a class="qlink" href="https://gkbharta44-code.github.io/Chat-Bot/" target="_blank">🤖 Chatbot</a>
+  </div>
+  <div class="hero-conf">Confidential · Not for Public Distribution · DELPER Ecom · India · June 2026</div>
+</div>
+
+<!-- DPR PAGE BODY -->
+<div class="page-dark">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px 80px">
+
+    <!-- TABLE OF CONTENTS -->
+    <section id="toc">
+      <div class="sec-tag">Contents</div>
+      <h2>DPR Business Plan — Table of Contents</h2>
+      <p class="sec-sub">Nine sections covering the complete DPR commercial opportunity</p>
+      <div class="toc-grid">
+        <a class="toc-item" href="#exec"><div class="toc-num">01</div><div><div class="toc-title">Executive Summary</div><div class="toc-desc">Business overview, mission, value proposition and headline metrics</div></div></a>
+        <a class="toc-item" href="#problem"><div class="toc-num">02</div><div><div class="toc-title">Problem &amp; Opportunity</div><div class="toc-desc">$120T supply chain inefficiency, loyalty fragmentation, the addressable market</div></div></a>
+        <a class="toc-item" href="#product"><div class="toc-num">03</div><div><div class="toc-title">Product &amp; Technology</div><div class="toc-desc">Dual Reward Split Engine, 6-Layer Chain, Hyperledger, smart contracts</div></div></a>
+        <a class="toc-item" href="#model"><div class="toc-num">04</div><div><div class="toc-title">Business Model</div><div class="toc-desc">Four charge streams, ETH stability pool, revenue architecture</div></div></a>
+        <a class="toc-item" href="#gtm"><div class="toc-num">05</div><div><div class="toc-title">Go-to-Market Strategy</div><div class="toc-desc">Phase roadmap, anchor partner acquisition, geography roll-out</div></div></a>
+        <a class="toc-item" href="#financials"><div class="toc-num">06</div><div><div class="toc-title">Financial Projections</div><div class="toc-desc">5-year P&L, token economics, ETH pool growth, reinvestment model</div></div></a>
+        <a class="toc-item" href="#regulatory"><div class="toc-num">07</div><div><div class="toc-title">Regulatory &amp; Compliance</div><div class="toc-desc">Howey Test navigation, multi-jurisdiction licensing, AML/KYC framework</div></div></a>
+        <a class="toc-item" href="#risk"><div class="toc-num">08</div><div><div class="toc-title">Risk Analysis</div><div class="toc-desc">ETH pool capacity, securities classification, adoption risk, mitigations</div></div></a>
+        <a class="toc-item" href="#team"><div class="toc-num">09</div><div><div class="toc-title">Team, Partners &amp; Funding</div><div class="toc-desc">Leadership, vendor ecosystem, India startup model, funding rounds</div></div></a>
+      </div>
+    </section>
+
+    <!-- 01 EXECUTIVE SUMMARY -->
+    <section id="exec">
+      <div class="sec-tag">01 — Executive Summary</div>
+      <h2>Business at a Glance</h2>
+      <p class="sec-sub">DPR is a blockchain-native loyalty and settlement protocol</p>
+      <div class="mission-block">
+        <strong>Our Mission:</strong> To become the universal loyalty and settlement layer for global commerce — rewarding every participant across the 6-layer supply chain while building an ETH-backed treasury that <strong>permanently floors the token price.</strong>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-title">Dual Reward Split</div><div class="pillar-text">Every $247 transaction splits 25% ad discount + 75% loyalty. 2.94 DPR tokens issued per transaction across 38 currencies.</div></div>
+        <div class="pillar"><div class="pillar-title">6-Layer Chain</div><div class="pillar-text">Smart contracts propagate rewards to all 6 upstream supply chain layers at 0.85× each, creating a 4.15× ecosystem multiplier at zero extra cost.</div></div>
+        <div class="pillar"><div class="pillar-title">ETH Stability Pool</div><div class="pillar-text">80% of all charges feed an ETH treasury. By Y5, $17.51T pool backs each token with $11.67 in hard ETH collateral.</div></div>
+        <div class="pillar"><div class="pillar-title">India Tax Structure</div><div class="pillar-text">Section 80-IAC exemption saves $621.8B in Y1–Y3 tax — every dollar reinvested into operations, SC partners and global expansion.</div></div>
+      </div>
+      <div style="margin-top:20px" class="g4">
+        <div class="stat-card sc-gold"><div class="stat-val gold">$306B/mo</div><div class="stat-lbl">Charges at Launch</div></div>
+        <div class="stat-card sc-teal"><div class="stat-val teal">$327.40</div><div class="stat-lbl">Y5 Token Price</div></div>
+        <div class="stat-card sc-ice"><div class="stat-val ice">1,559×</div><div class="stat-lbl">Seed Return</div></div>
+        <div class="stat-card sc-gold"><div class="stat-val white">Month 8</div><div class="stat-lbl">Break-Even</div></div>
+      </div>
+    </section>
+
+    <!-- 02 PROBLEM -->
+    <section id="problem">
+      <div class="sec-tag">02 — Problem &amp; Opportunity</div>
+      <h2>A $120 Trillion Market Running on Broken Infrastructure</h2>
+      <div class="g2" style="margin-bottom:16px">
+        <div class="card">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#fb7185;margin-bottom:14px">The Problems</div>
+          <div class="blist">
+            <div class="bli"><strong>Fragmented Loyalty —</strong> Global loyalty programmes lose $500B+ in unredeemed value annually. No interoperability between merchant programmes. Consumers receive minimal real value.</div>
+            <div class="bli"><strong>Supply Chain Opacity —</strong> $120T in annual SC transactions settled through slow, costly intermediaries. No universal tokenised settlement layer.</div>
+            <div class="bli"><strong>No Shared Upside —</strong> Merchants, distributors, manufacturers all transact but none benefit from network growth. Value accrues only to payment rails.</div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--teal2);margin-bottom:14px">The Opportunity</div>
+          <div class="g2" style="gap:10px">
+            <div class="stat-card sc-gold" style="padding:14px"><div class="stat-val gold" style="font-size:1.3rem">$120T</div><div class="stat-lbl">Global SC / year</div></div>
+            <div class="stat-card sc-teal" style="padding:14px"><div class="stat-val teal" style="font-size:1.3rem">$7T/mo</div><div class="stat-lbl">DPR-addressable @ 70%</div></div>
+            <div class="stat-card sc-ice" style="padding:14px"><div class="stat-val ice" style="font-size:1.3rem">2B</div><div class="stat-lbl">POS txns/month</div></div>
+            <div class="stat-card sc-gold" style="padding:14px"><div class="stat-val white" style="font-size:1.3rem">8.3B</div><div class="stat-lbl">Participants by Y5</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="mission-block" style="border-left-color:var(--teal2)">
+        <strong>Key Insight:</strong> Supply chain is 14.2× larger than the entire POS network. Capturing both with the same protocol creates an unassailable moat.
+      </div>
+    </section>
+
+    <!-- 03 PRODUCT -->
+    <section id="product">
+      <div class="sec-tag">03 — Product &amp; Technology</div>
+      <h2>The Architecture Behind the 4.15× Multiplier</h2>
+      <div class="g2" style="margin-bottom:16px">
+        <div class="card">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Dual Reward Split Engine — Every $247.00 Transaction</div>
+          <div class="g2" style="gap:10px;margin-bottom:14px">
+            <div class="card2" style="border-left:3px solid var(--gold)"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">25% AD DISCOUNT</div><div style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--gold)">$61.75 / txn</div></div>
+            <div class="card2" style="border-left:3px solid var(--teal2)"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">75% LOYALTY REWARD</div><div style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--teal2)">$185.25 → 2.94 DPR</div></div>
+          </div>
+          <div class="blist">
+            <div class="bli">38 currencies + 31 cryptocurrencies supported</div>
+            <div class="bli">Instant Hyperledger wallet credit via smart contract</div>
+            <div class="bli">1 DPR = $63.00 at seed · $327.40 at Year 5</div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">6-Layer Recursive Chain · Total: 4.15×</div>
+          <div class="chain">
+            <div class="chain-row"><div class="cr-num">L1</div><div class="cr-name">Consumer/Seed</div><div class="cr-bar-bg"><div class="cr-bar-fill" style="width:100%"></div></div><div class="cr-mult">1.000×</div></div>
+            <div class="chain-row"><div class="cr-num">L2</div><div class="cr-name">Distributor</div><div class="cr-bar-bg"><div class="cr-bar-fill" style="width:85%"></div></div><div class="cr-mult">0.850×</div></div>
+            <div class="chain-row"><div class="cr-num">L3</div><div class="cr-name">Manufacturer</div><div class="cr-bar-bg"><div class="cr-bar-fill" style="width:72.3%"></div></div><div class="cr-mult">0.723×</div></div>
+            <div class="chain-row"><div class="cr-num">L4</div><div class="cr-name">Processor</div><div class="cr-bar-bg"><div class="cr-bar-fill" style="width:61.4%"></div></div><div class="cr-mult">0.614×</div></div>
+            <div class="chain-row"><div class="cr-num">L5</div><div class="cr-name">Wholesaler</div><div class="cr-bar-bg"><div class="cr-bar-fill" style="width:52.2%"></div></div><div class="cr-mult">0.522×</div></div>
+            <div class="chain-row"><div class="cr-num">L6</div><div class="cr-name">Raw Materials</div><div class="cr-bar-bg"><div class="cr-bar-fill" style="width:44.4%"></div></div><div class="cr-mult">0.444×</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="g4">
+        <div class="card2" style="text-align:center"><div style="font-size:13px;font-weight:700;color:var(--gold);margin-bottom:4px">IBM Hyperledger</div><div style="font-size:11px;color:var(--muted)">Private permissioned ledger · 5,000 TPS · ISO 27001</div></div>
+        <div class="card2" style="text-align:center"><div style="font-size:13px;font-weight:700;color:var(--teal2);margin-bottom:4px">Chainlink Oracles</div><div style="font-size:11px;color:var(--muted)">Real-time price feeds · Cross-chain · Audited</div></div>
+        <div class="card2" style="text-align:center"><div style="font-size:13px;font-weight:700;color:var(--ice);margin-bottom:4px">Smart Contracts</div><div style="font-size:11px;color:var(--muted)">Auto-trigger 6-layer reward flows · Trail of Bits audit</div></div>
+        <div class="card2" style="text-align:center"><div style="font-size:13px;font-weight:700;color:#a78bfa;margin-bottom:4px">AML / KYC Stack</div><div style="font-size:11px;color:var(--muted)">Chainalysis + Jumio · 200 countries · FATF ready</div></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px">
+        <span class="badge badge-teal">PCI DSS L1</span>
+        <span class="badge badge-teal">SOC 2 Type II</span>
+        <span class="badge badge-teal">ISO 27001</span>
+        <span class="badge badge-teal">ISO 20022</span>
+        <span class="badge badge-teal">MiCA Ready</span>
+        <span class="badge badge-teal">FATF Travel Rule</span>
+      </div>
+    </section>
+
+    <!-- 04 BUSINESS MODEL -->
+    <section id="model">
+      <div class="sec-tag">04 — Business Model</div>
+      <h2>Four Charge Streams · Two Asset Allocations</h2>
+      <div class="charges" style="margin-bottom:16px">
+        <div class="charge-card cc1"><div class="ch-num">01 · Reward Earned</div><div class="ch-title">0.5% × $1.54T/mo</div><div class="ch-rate">$7.7B/mo</div><div class="ch-desc">Charged on 75% loyalty pool at token credit. 4.15× chain transforms $370.5B base to $1.54T effective pool.</div></div>
+        <div class="charge-card cc2"><div class="ch-num">02 · Reward Redeemed</div><div class="ch-title">0.5% × $1.54T/mo</div><div class="ch-rate">$7.7B/mo</div><div class="ch-desc">Charged on redemption value at any POS terminal. All 6 layers generate independent earn and redeem events.</div></div>
+        <div class="charge-card cc3"><div class="ch-num">03 · SC Buy Charge</div><div class="ch-title">0.5% × $29.07T/mo</div><div class="ch-rate">$145.3B/mo</div><div class="ch-desc">Charged when SC participants buy DPR tokens across all 6 supply tiers to settle procurement obligations.</div></div>
+        <div class="charge-card cc4"><div class="ch-num">04 · SC Sell Charge</div><div class="ch-title">0.5% × $29.07T/mo</div><div class="ch-rate">$145.3B/mo</div><div class="ch-desc">Charged when SC participants liquidate DPR tokens received as settlement for goods or services.</div></div>
+      </div>
+      <div class="g2">
+        <div class="stat-card sc-gold" style="padding:28px"><div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Total Monthly Charges (Y0)</div><div class="stat-val gold" style="font-size:2.2rem">$306.0B</div></div>
+        <div class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="text-align:center"><div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal2);margin-bottom:6px">ETH Pool (80%)</div><div style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--teal2)">$244.8B/mo</div><div style="font-size:11px;color:var(--muted);margin-top:4px">Continuous inflow to ETH treasury</div></div>
+          <div style="text-align:center"><div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Revenue (20%)</div><div style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--gold)">$61.2B/mo</div><div style="font-size:11px;color:var(--muted);margin-top:4px">Operations, expansion, team</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 GTM -->
+    <section id="gtm">
+      <div class="sec-tag">05 — Go-to-Market Strategy</div>
+      <h2>Phase-Gated Rollout · Anchor Partners · 4 Geography Waves</h2>
+      <div class="phases" style="margin-bottom:16px">
+        <div class="phase-card"><div class="ph-num">1</div><div class="ph-title">Foundation</div><div class="ph-period">M1–6 · $66.5M</div><div class="ph-score">Score: 5.72 → 6.71</div><div class="blist"><div class="bli">Legal counsel + C-suite hire</div><div class="bli">UAE VARA + FinCEN MSB sandbox</div><div class="bli">Commercial pilot (50K+ txns)</div><div class="bli">$25–50M seed reserve</div></div></div>
+        <div class="phase-card"><div class="ph-num">2</div><div class="ph-title">Credibility</div><div class="ph-period">M7–12 · Self-funded</div><div class="ph-score">Score: 6.71 → 7.84</div><div class="blist"><div class="bli">Soft launch UAE + Singapore</div><div class="bli">ISO 27001 · SOC 2 · MAS + FCA</div><div class="bli">Anchor partners 1–3 live</div><div class="bli">Break-even Month 8 ✓</div></div></div>
+        <div class="phase-card"><div class="ph-num">3</div><div class="ph-title">Institutional</div><div class="ph-period">M13–18 · Self-funded</div><div class="ph-score">Score: 7.84 → 8.76</div><div class="blist"><div class="bli">MiCA filing · DFSA Dubai</div><div class="bli">Anchor partners 4–7 live</div><div class="bli">5,000 TPS certification</div><div class="bli">India + Malaysia launches</div></div></div>
+        <div class="phase-card"><div class="ph-num">4</div><div class="ph-title">Maturity</div><div class="ph-period">M19–24 · Self-funded</div><div class="ph-score">Score: 8.76 → 9.08</div><div class="blist"><div class="bli">NY BitLicense · MiCA approval</div><div class="bli">Anchor partners 8–12 live</div><div class="bli">Stripe/Adyen/Mastercard Track</div><div class="bli">Full global commercial launch</div></div></div>
+      </div>
+      <div class="card">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Geographic Expansion Waves</div>
+        <div class="g4" style="gap:10px">
+          <div class="card2" style="text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">Wave 1 · Month 7</div><div style="font-size:13px;font-weight:700;color:#fff">UAE · Singapore</div></div>
+          <div class="card2" style="text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">Wave 2 · Month 13</div><div style="font-size:13px;font-weight:700;color:#fff">UK · EU (27 states)</div></div>
+          <div class="card2" style="text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">Wave 3 · Month 16</div><div style="font-size:13px;font-weight:700;color:#fff">India · Malaysia</div></div>
+          <div class="card2" style="text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">Wave 4 · Month 20</div><div style="font-size:13px;font-weight:700;color:#fff">USA · Global</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 FINANCIALS -->
+    <section id="financials">
+      <div class="sec-tag">06 — Financial Projections</div>
+      <h2>5-Year Revenue Model · Token Economics · ETH Pool Growth</h2>
+      <div class="g4" style="margin-bottom:16px">
+        <div class="stat-card sc-gold"><div class="stat-val gold">$17.51T</div><div class="stat-lbl">5-Yr ETH Pool</div><div class="stat-note">+312% vs original</div></div>
+        <div class="stat-card sc-teal"><div class="stat-val teal">$4.38T</div><div class="stat-lbl">5-Yr Revenue</div><div class="stat-note">+312% vs original</div></div>
+        <div class="stat-card sc-ice"><div class="stat-val ice">$3.90T</div><div class="stat-lbl">5-Yr Reinvested</div><div class="stat-note">100% daily reinvest</div></div>
+        <div class="stat-card sc-gold"><div class="stat-val white">$621.8B</div><div class="stat-lbl">3-Yr Tax Saved</div><div class="stat-note">Section 80-IAC</div></div>
+      </div>
+      <div class="tbl-wrap" style="margin-bottom:16px">
+        <table>
+          <thead><tr><th>Year</th><th>Charges/Mo</th><th>ETH Annual</th><th>Revenue Ann</th><th>Token Price</th></tr></thead>
+          <tbody>
+            <tr><td>Y0</td><td>$306.0B</td><td>$2.94T</td><td>$734.5B</td><td class="gold">$244.84</td></tr>
+            <tr><td>Y1</td><td>$323.7B</td><td>$3.11T</td><td>$776.8B</td><td class="gold">$258.92</td></tr>
+            <tr><td>Y2</td><td>$342.6B</td><td>$3.29T</td><td>$822.3B</td><td class="gold">$274.09</td></tr>
+            <tr><td>Y3</td><td>$363.1B</td><td>$3.49T</td><td>$871.3B</td><td class="gold">$290.45</td></tr>
+            <tr><td>Y4</td><td>$385.2B</td><td>$3.70T</td><td>$924.5B</td><td class="gold">$308.16</td></tr>
+            <tr><td class="star">Y5 ★</td><td class="star">$409.2B</td><td class="star">$3.93T</td><td class="star">$982.2B</td><td class="star">$327.40</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card" style="margin-bottom:14px">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">India Tax Exemption + Daily Reinvestment — Section 80-IAC</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Year</th><th>Annual Revenue</th><th>Normal Tax</th><th>Exempt?</th><th>Tax Saved</th><th>After-Tax Profit</th><th>Daily Reinvest</th></tr></thead>
+            <tbody>
+              <tr><td>Year 1</td><td>$776.8B</td><td>$195.5B</td><td class="teal">✓ EXEMPT</td><td class="teal">$195.5B</td><td>$776.8B</td><td>$2.1B/day</td></tr>
+              <tr><td>Year 2</td><td>$822.3B</td><td>$207.0B</td><td class="teal">✓ EXEMPT</td><td class="teal">$207.0B</td><td>$822.3B</td><td>$2.3B/day</td></tr>
+              <tr><td>Year 3</td><td>$871.3B</td><td>$219.3B</td><td class="teal">✓ EXEMPT</td><td class="teal">$219.3B</td><td>$871.3B</td><td>$2.4B/day</td></tr>
+              <tr><td>Year 4</td><td>$924.5B</td><td>$232.7B</td><td class="gold">Normal</td><td>—</td><td>$691.8B</td><td>$1.9B/day</td></tr>
+              <tr><td class="star">Year 5 ★</td><td>$982.2B</td><td>$247.2B</td><td class="gold">Normal</td><td>—</td><td>$735.0B</td><td>$2.0B/day</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top:12px;font-family:'DM Mono',monospace;font-size:10px;color:var(--muted)">3-YEAR TAX SAVED: $621.8B &nbsp;·&nbsp; 5-YEAR REINVESTED: $3.90T &nbsp;·&nbsp; vs $24.77B original (+2410%)</div>
+      </div>
+      <div class="card">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal2);margin-bottom:14px">ETH Liquid Pool — Stability Mechanism</div>
+        <div class="g4" style="gap:10px;margin-bottom:16px">
+          <div class="stat-card sc-teal" style="padding:14px"><div class="stat-val teal" style="font-size:1.2rem">$244.8B</div><div class="stat-lbl">Monthly ETH Credit Y0</div><div class="stat-note">vs $58.96B original (+315%)</div></div>
+          <div class="stat-card sc-gold" style="padding:14px"><div class="stat-val gold" style="font-size:1.2rem">$17.51T</div><div class="stat-lbl">5-Year Cumulative Pool</div><div class="stat-note">vs $4.25T original (+312%)</div></div>
+          <div class="stat-card sc-ice" style="padding:14px"><div class="stat-val ice" style="font-size:1.2rem">$11.67</div><div class="stat-lbl">ETH Backing/Token Y5</div><div class="stat-note">vs $2.83 original (+312%)</div></div>
+          <div class="stat-card sc-gold" style="padding:14px"><div class="stat-val white" style="font-size:1.2rem">4.15×</div><div class="stat-lbl">Chain Multiplier</div><div class="stat-note">6 layers × 0.85 recursive</div></div>
+        </div>
+        <div class="mech-grid">
+          <div class="mech-card"><div class="mc-num">01</div><div><div class="mc-title">Continuous Inflow</div><div class="mc-text">$244.8B credited every month from 4-stream charges. Pool grows regardless of market — driven by 6-layer chain volume, not speculation.</div></div></div>
+          <div class="mech-card"><div class="mc-num">02</div><div><div class="mc-title">Price Floor Defence</div><div class="mc-text">Downward DPR price triggers automatic ETH buybacks. Remodeled pool is 4× larger than original, providing far greater buyback firepower.</div></div></div>
+          <div class="mech-card"><div class="mc-num">03</div><div><div class="mc-title">Hard Asset Backing</div><div class="mc-text">By Year 5, the $17.51T ETH pool backs 1.5T tokens at $11.67 ETH per DPR — 312% more backing than the original model.</div></div></div>
+          <div class="mech-card"><div class="mc-num">04</div><div><div class="mc-title">Compound Stability</div><div class="mc-text">Annual ETH additions grow from $3.11T (Y1) to $3.93T (Y5). Tax savings + daily reinvestment compounds pool formation significantly faster.</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 REGULATORY -->
+    <section id="regulatory">
+      <div class="sec-tag">07 — Regulatory &amp; Compliance</div>
+      <h2>Multi-Jurisdiction Licensing · Howey Test Navigation · AML Framework</h2>
+      <div class="g2" style="margin-bottom:16px">
+        <div class="card">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#fb7185;margin-bottom:14px">Howey Test Resolution</div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:12px">Risk: DPR meets all 4 Howey criteria → securities classification</div>
+          <div class="blist">
+            <div class="bli"><span class="check">✓ Reg D 506(c)</span> — Private placement M1–3 bifurcates investment and utility functions</div>
+            <div class="bli"><span class="check">✓ Utility Token</span> — Clear utility function: loyalty reward + SC settlement medium</div>
+            <div class="bli"><span class="check">✓ Reg Advisory Board</span> — Former SEC + FCA officials on advisory board at incorporation</div>
+            <div class="bli"><span class="check">✓ Jurisdiction Select</span> — UAE + Singapore primary — crypto-friendly regulatory sandboxes</div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Licensing Roadmap</div>
+          <div class="lic-list">
+            <div class="lic-row"><div class="lic-name">FinCEN MSB</div><div class="lic-period">Month 1–3</div><div class="lic-phase">Priority</div></div>
+            <div class="lic-row"><div class="lic-name">UAE VARA Sandbox</div><div class="lic-period">Month 1–3</div><div class="lic-phase">Priority</div></div>
+            <div class="lic-row"><div class="lic-name">MAS Singapore</div><div class="lic-period">Month 7–12</div><div class="lic-phase">Phase 2</div></div>
+            <div class="lic-row"><div class="lic-name">FCA UK</div><div class="lic-period">Month 7–12</div><div class="lic-phase">Phase 2</div></div>
+            <div class="lic-row"><div class="lic-name">MiCA ART (EU 27)</div><div class="lic-period">Month 15–18</div><div class="lic-phase">Phase 3</div></div>
+            <div class="lic-row"><div class="lic-name">NY BitLicense</div><div class="lic-period">Month 20</div><div class="lic-phase">Phase 4</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="g2">
+        <div class="card">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal2);margin-bottom:12px">AML / KYC Stack</div>
+          <div class="blist">
+            <div class="bli">Chainalysis — blockchain forensics + transaction monitoring</div>
+            <div class="bli">Elliptic — 100+ chain coverage + sanctions screening</div>
+            <div class="bli">Jumio — 200 countries, 5,000+ document types, biometric</div>
+            <div class="bli">Sumsub — FATF Travel Rule compliant across all jurisdictions</div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ice);margin-bottom:12px">Data &amp; Privacy Compliance</div>
+          <div class="blist">
+            <div class="bli">GDPR (EU) + UK GDPR — full data subject rights framework</div>
+            <div class="bli">PDPA Singapore + DPDPA India — Asia-Pacific compliance</div>
+            <div class="bli">ISO 27001 certified infrastructure — Big 4 quarterly attestation</div>
+            <div class="bli">Smart contract audit: Trail of Bits + ConsenSys Diligence</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 RISK -->
+    <section id="risk">
+      <div class="sec-tag">08 — Risk Analysis</div>
+      <h2>Critical Risks · Mitigation Strategies · Residual Risk Ratings</h2>
+      <div class="risk-list">
+        <div class="risk-card"><div class="r-id">R1</div><div><div class="r-title">ETH Pool Capacity</div><div class="r-risk">$244.8B/mo ETH purchase required at Y0 = 60%+ of ETH market cap. Operationally impossible to absorb.</div><div class="r-mit-lbl">Mitigation</div><div class="r-mit">Regulated Multi-Asset Reserve: 40% USDC/USDT · 25% US T-Bills · 15% ETH · 10% BTC · 10% Gold-backed tokens. Reduces ETH purchases to 2.2% of market cap.</div></div><div class="r-badge rb-low">LOW after mitigation</div></div>
+        <div class="risk-card"><div class="r-id">R2</div><div><div class="r-title">Securities Classification</div><div class="r-risk">DPR meets all 4 Howey Test criteria in the US. SEC enforcement action could halt operations.</div><div class="r-mit-lbl">Mitigation</div><div class="r-mit">Reg D 506(c) private placement M1–3. UAE + Singapore primary domicile. MiCA ART authorisation. Former SEC officials on Regulatory Advisory Board.</div></div><div class="r-badge rb-med">MEDIUM — jurisdiction-dependent</div></div>
+        <div class="risk-card"><div class="r-id">R3</div><div><div class="r-title">SC Adoption Rate</div><div class="r-risk">70% supply chain adoption by Y5 is historically aggressive. No prior protocol has achieved this penetration.</div><div class="r-mit-lbl">Mitigation</div><div class="r-mit">Phased milestone targets (2%→8%→20%→45%→70%). Anchor partner incentive programme. SAP Ariba + Coupa integrations cover 10M+ enterprise suppliers.</div></div><div class="r-badge rb-med">MEDIUM — milestone-gated</div></div>
+        <div class="risk-card"><div class="r-id">R4</div><div><div class="r-title">Regulatory Change</div><div class="r-risk">Crypto regulatory landscape shifts post-2024 elections across US, EU, India. MiCA implementation risk.</div><div class="r-mit-lbl">Mitigation</div><div class="r-mit">Multi-jurisdiction diversification. No single-market dependency. Former FCA + VARA advisors. Islamic Sukuk as non-dilutive fallback capital from Month 15.</div></div><div class="r-badge rb-low">LOW — diversified structure</div></div>
+      </div>
+    </section>
+
+    <!-- 09 TEAM -->
+    <section id="team">
+      <div class="sec-tag">09 — Team, Partners &amp; Funding</div>
+      <h2>Leadership · Global Vendor Ecosystem · India Startup Funding Model</h2>
+      <div class="team-grid" style="margin-bottom:16px">
+        <div class="team-card"><div class="tc-role">CEO</div><div class="tc-desc">Former Visa / Mastercard executive. 15+ yrs global payments. Network of tier-1 bank relationships.</div></div>
+        <div class="team-card"><div class="tc-role">CTO</div><div class="tc-desc">Hyperledger architect. Smart contract security specialist. Trail of Bits-certified audit track record.</div></div>
+        <div class="team-card"><div class="tc-role">CCO</div><div class="tc-desc">Former FinCEN compliance officer. FATF Travel Rule implementation expertise across 20+ jurisdictions.</div></div>
+        <div class="team-card"><div class="tc-role">CFO</div><div class="tc-desc">Big 4 fintech audit background. Crypto treasury management. ETH reserve strategy and reserve attestation.</div></div>
+        <div class="team-card"><div class="tc-role">CLO</div><div class="tc-desc">Cooley / WilmerHale calibre securities law. Reg D, MiCA, VARA, MAS licensing specialisation.</div></div>
+        <div class="team-card"><div class="tc-role">CBO</div><div class="tc-desc">Supply chain partnerships lead. SAP Ariba, Coupa, GEP enterprise relationship management at C-level.</div></div>
+      </div>
+      <div class="partner-grid" style="margin-bottom:16px">
+        <div class="partner-card"><div class="pc-title">Supply Chain</div><div class="blist"><div class="bli">SAP Ariba — 6.5M suppliers</div><div class="bli">Coupa Software — 3,000+ enterprise</div><div class="bli">GEP SMART — manufacturing focus</div><div class="bli">Candex — Fortune 2000 procurement</div></div></div>
+        <div class="partner-card"><div class="pc-title">POS &amp; Payments</div><div class="blist"><div class="bli">Stripe · Adyen · Worldpay</div><div class="bli">PAX Technology — 60M+ terminals</div><div class="bli">Grab — 9M merchants, SE Asia</div><div class="bli">Magnati · Noon (Gulf region)</div></div></div>
+        <div class="partner-card"><div class="pc-title">KYC / AML / Compliance</div><div class="blist"><div class="bli">Chainalysis — blockchain forensics</div><div class="bli">Elliptic — 100+ chain monitoring</div><div class="bli">Jumio — 200 countries, 5K doc types</div><div class="bli">Sumsub — FATF Travel Rule ready</div></div></div>
+        <div class="partner-card"><div class="pc-title">Trade Finance &amp; Logistics</div><div class="blist"><div class="bli">Contour (HSBC/StanChart network)</div><div class="bli">Marco Polo — 30+ bank network</div><div class="bli">project44 — 200K+ carriers</div><div class="bli">Flexport — 10K+ companies</div></div></div>
+        <div class="partner-card"><div class="pc-title">Regional — MENA</div><div class="blist"><div class="bli">Magnati (FAB) — 100K+ UAE terminals</div><div class="bli">Network International — 50+ countries</div><div class="bli">PayTabs — 24 MENA countries</div><div class="bli">Geidea — Saudi Arabia POS</div></div></div>
+        <div class="partner-card"><div class="pc-title">Africa &amp; LATAM</div><div class="blist"><div class="bli">Flutterwave — 34 African countries</div><div class="bli">DPO Group — 54 African countries</div><div class="bli">evertec — 6M+ LATAM merchants</div><div class="bli">Kushki — Andean markets</div></div></div>
+      </div>
+      <div class="card">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">India Startup Funding Model</div>
+        <div class="g4" style="gap:10px">
+          <div class="stat-card sc-gold" style="padding:14px"><div class="stat-val gold" style="font-size:1.1rem">$15–25M</div><div class="stat-lbl">Pre-Seed</div></div>
+          <div class="stat-card sc-teal" style="padding:14px"><div class="stat-val teal" style="font-size:1.1rem">$25–50M</div><div class="stat-lbl">Seed</div></div>
+          <div class="stat-card sc-ice" style="padding:14px"><div class="stat-val ice" style="font-size:1.1rem">Month 8</div><div class="stat-lbl">Break-even</div></div>
+          <div class="stat-card sc-gold" style="padding:14px"><div class="stat-val white" style="font-size:1.1rem">$200–500M</div><div class="stat-lbl">Sukuk M15+</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPREHENSIVE SUMMARY -->
+    <section id="summary">
+      <div class="sec-tag">Comprehensive Summary</div>
+      <h2>Token Economics · Supply Chain · Monthly Income · ETH Pool · 5-Year Outlook</h2>
+      <div class="summary-grid" style="margin-bottom:20px">
+        <div class="sg-cell"><div class="sg-lbl">Y0 Token Price (1.5T)</div><div class="sg-val gold">$244.84</div><div class="sg-note">vs $44.96 (+445%)</div></div>
+        <div class="sg-cell"><div class="sg-lbl">Y5 Token Price (base)</div><div class="sg-val gold">$327.40</div><div class="sg-note">vs $62.15 (+427%)</div></div>
+        <div class="sg-cell"><div class="sg-lbl">Return from Seed ($0.21)</div><div class="sg-val teal">1559×</div><div class="sg-note">~335% CAGR</div></div>
+        <div class="sg-cell"><div class="sg-lbl">Monthly Charges (Y0)</div><div class="sg-val white">$306.0B</div><div class="sg-note">vs $73.7B (+315%)</div></div>
+        <div class="sg-cell"><div class="sg-lbl">Monthly Revenue (Y0)</div><div class="sg-val gold">$61.2B</div><div class="sg-note">20% of charges</div></div>
+        <div class="sg-cell"><div class="sg-lbl">Monthly ETH Pool (Y0)</div><div class="sg-val teal">$244.8B</div><div class="sg-note">80% of charges</div></div>
+        <div class="sg-cell"><div class="sg-lbl">5-Yr Cumul ETH Pool</div><div class="sg-val gold">$17.51T</div><div class="sg-note">vs $4.25T (+312%)</div></div>
+        <div class="sg-cell"><div class="sg-lbl">5-Yr Cumul Revenue</div><div class="sg-val teal">$4.38T</div><div class="sg-note">vs $1.062T (+312%)</div></div>
+        <div class="sg-cell"><div class="sg-lbl">3-Yr Tax Saved (80-IAC)</div><div class="sg-val ice">$621.8B</div><div class="sg-note">vs $24.77B (+2410%)</div></div>
+        <div class="sg-cell"><div class="sg-lbl">5-Yr Total Reinvested</div><div class="sg-val white">$3.90T</div><div class="sg-note">100% daily after-tax</div></div>
+        <div class="sg-cell"><div class="sg-lbl">ETH Backing/Token (Y5)</div><div class="sg-val gold">$11.67</div><div class="sg-note">vs $2.83 original</div></div>
+        <div class="sg-cell"><div class="sg-lbl">Chain Multiplier</div><div class="sg-val teal">4.15×</div><div class="sg-note">6 layers × 0.85</div></div>
+      </div>
+      <div class="tbl-wrap" style="margin-bottom:20px">
+        <table>
+          <thead><tr><th>Metric</th><th>Original</th><th>Remodeled</th><th>Uplift</th></tr></thead>
+          <tbody>
+            <tr class="uplift-row"><td>Monthly charges (Y0)</td><td>$73.7B</td><td class="gold">$306.0B</td><td class="teal">+315%</td></tr>
+            <tr class="uplift-row"><td>Y0 token price (1.5T)</td><td>$44.96</td><td class="gold">$244.84</td><td class="teal">+445%</td></tr>
+            <tr class="uplift-row"><td>Y5 token price (1.5T)</td><td>$62.15</td><td class="gold">$327.40</td><td class="teal">+427%</td></tr>
+            <tr class="uplift-row"><td>5-year ETH pool</td><td>$4.25T</td><td class="gold">$17.51T</td><td class="teal">+312%</td></tr>
+            <tr class="uplift-row"><td>5-year revenue</td><td>$1.062T</td><td class="gold">$4.38T</td><td class="teal">+312%</td></tr>
+            <tr class="uplift-row"><td>Seed return</td><td>295.9×</td><td class="gold">1559×</td><td class="teal">+427%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Metric</th><th>Before Programme</th><th>After Programme (Month 24)</th></tr></thead>
+          <tbody>
+            <tr><td>Viability Score</td><td>5.72 — Conditionally Viable</td><td class="teal">9.08 — Highly Viable, Institutionally Credible</td></tr>
+            <tr><td>Regulatory Risk</td><td>Existential (Howey + no licences)</td><td class="teal">Managed (7 licences, Reg D, MiCA)</td></tr>
+            <tr><td>SC Anchor Partners</td><td>0 operational</td><td class="teal">12 tier-1 operational</td></tr>
+            <tr><td>Jurisdictions Licensed</td><td>0</td><td class="teal">UAE · Singapore · UK · EU (27) · US · Malaysia · Dubai</td></tr>
+            <tr><td>Risk-Adjusted Token EV Y5</td><td>$33.51</td><td class="teal">$42.53 (+26.9%)</td></tr>
+            <tr><td>Shutdown Probability</td><td>7%</td><td class="teal">2%</td></tr>
+            <tr><td>Institutional Access</td><td>None</td><td class="teal">Full global — banks, pension funds, Fortune 500</td></tr>
+            <tr><td>Revenue Accessible</td><td>&lt; $1B</td><td class="teal">$45 – $200B</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- INVESTMENT CASE -->
+    <section id="investment">
+      <div class="sec-tag">Investment Case</div>
+      <h2>Why DPR · Why Now · Why Inevitable</h2>
+      <div class="inv-list" style="margin-bottom:20px">
+        <div class="inv-item"><div class="inv-n">1</div><div><div class="inv-title">Only protocol combining POS + SC loyalty in one chain</div><div class="inv-desc">No incumbent. First-mover across both streams.</div></div></div>
+        <div class="inv-item"><div class="inv-n">2</div><div><div class="inv-title">4.15× chain multiplier — zero extra acquisition cost</div><div class="inv-desc">Revenue compounds across 8.3B participants by Y5.</div></div></div>
+        <div class="inv-item"><div class="inv-n">3</div><div><div class="inv-title">$17.51T ETH pool by Year 5 — hard backing per token</div><div class="inv-desc">$11.67 ETH per DPR vs $2.83 in original model.</div></div></div>
+        <div class="inv-item"><div class="inv-n">4</div><div><div class="inv-title">India tax structure saves $621.8B — all reinvested</div><div class="inv-desc">No external capital after $66.5M Phase 1 seed.</div></div></div>
+        <div class="inv-item"><div class="inv-n">5</div><div><div class="inv-title">Break-even Month 8 — 393× return in 24 months</div><div class="inv-desc">$66.5M invested → $26.1B cumulative revenue.</div></div></div>
+      </div>
+      <div class="summary-grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">
+        <div class="sg-cell"><div class="sg-lbl">Return from $0.21 seed</div><div class="sg-val gold">1,559×</div></div>
+        <div class="sg-cell"><div class="sg-lbl">5-Year Cumulative Revenue</div><div class="sg-val teal">$4.38T</div></div>
+        <div class="sg-cell"><div class="sg-lbl">5-Year ETH Stability Pool</div><div class="sg-val ice">$17.51T</div></div>
+        <div class="sg-cell"><div class="sg-lbl">Break-even Timeline</div><div class="sg-val white">Month 8</div></div>
+        <div class="sg-cell"><div class="sg-lbl">Total External Capital</div><div class="sg-val gold">$66.5M</div></div>
+        <div class="sg-cell"><div class="sg-lbl">Target Institutional Score</div><div class="sg-val teal">9.08/10</div></div>
+      </div>
+
+      <!-- 24-Month Programme -->
+      <div style="margin-top:24px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">24-Month Programme — Four Phases</div>
+      <div class="phases">
+        <div class="phase-card"><div class="ph-num">1</div><div class="ph-title">Foundation</div><div class="ph-period">Months 1–6</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);margin-bottom:4px">$132–270M Investment</div><div class="ph-score">Score: 5.72 → 6.71</div><div class="blist"><div class="bli">Legal counsel &amp; C-suite appointments</div><div class="bli">UAE VARA sandbox · FinCEN MSB registration</div><div class="bli">Commercial pilot (50K+ transactions)</div><div class="bli">$100–200M seed reserve</div></div></div>
+        <div class="phase-card"><div class="ph-num">2</div><div class="ph-title">Credibility</div><div class="ph-period">Months 7–12</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);margin-bottom:4px">$198–404M Investment</div><div class="ph-score">Score: 6.71 → 7.84</div><div class="blist"><div class="bli">ISO 27001 · SOC 2 · MAS &amp; FCA licences</div><div class="bli">Anchor partners 1–3 operational</div><div class="bli">Reg D placement · Big 4 annual audit</div><div class="bli">$150–300M reserve expansion</div></div></div>
+        <div class="phase-card"><div class="ph-num">3</div><div class="ph-title">Institutional Build</div><div class="ph-period">Months 13–18</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);margin-bottom:4px">$202–410M Investment</div><div class="ph-score">Score: 7.84 → 8.76</div><div class="blist"><div class="bli">MiCA filing · DFSA Dubai licence</div><div class="bli">Anchor partners 4–7 operational</div><div class="bli">5,000 TPS certification · Reserve dashboard</div><div class="bli">$150–300M reserve expansion</div></div></div>
+        <div class="phase-card"><div class="ph-num">4</div><div class="ph-title">Institutional Maturity</div><div class="ph-period">Months 19–24</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);margin-bottom:4px">$144–290M Investment</div><div class="ph-score">Score: 8.76 → 9.08</div><div class="blist"><div class="bli">NY BitLicense · MiCA approval</div><div class="bli">Anchor partners 8–12 operational</div><div class="bli">Mastercard Track · Stripe/Adyen integrations</div><div class="bli">Full global commercial launch</div></div></div>
+      </div>
+      <div class="card" style="margin-top:14px;text-align:center">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Grand Total Investment</div>
+        <div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--gold)">$676M – $1.374B</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px">Midpoint $1.025B · Headcount grows 74 → 395 FTEs</div>
+      </div>
+    </section>
+
+    <!-- QUICK LINKS -->
+    <section id="links">
+      <div class="sec-tag">Quick Access Links</div>
+      <h2>All Working Links from the Presentation</h2>
+      <p class="sec-sub">Every hyperlink from the original decks — click to open</p>
+      <div class="links-grid">
+        <a class="ext-link" href="http://www.delperecom.com" target="_blank" rel="noopener"><div class="el-ico">🌐</div><div><div class="el-title">Delper Ecom</div><div class="el-url">www.delperecom.com</div></div></a>
+        <a class="ext-link" href="https://gkbharta44-code.github.io/Delper-Ecom-/" target="_blank" rel="noopener"><div class="el-ico">⚙️</div><div><div class="el-title">Delper Ecom Business Process</div><div class="el-url">gkbharta44-code.github.io/Delper-Ecom-/</div></div></a>
+        <a class="ext-link" href="https://gkbharta44-code.github.io/To-Do-List/" target="_blank" rel="noopener"><div class="el-ico">✅</div><div><div class="el-title">TO DO List</div><div class="el-url">gkbharta44-code.github.io/To-Do-List/</div></div></a>
+        <a class="ext-link" href="https://gkbharta44-code.github.io/Opinion-Poll/" target="_blank" rel="noopener"><div class="el-ico">📊</div><div><div class="el-title">Delper Opinion Poll &amp; Onboarding</div><div class="el-url">gkbharta44-code.github.io/Opinion-Poll/</div></div></a>
+        <a class="ext-link" href="https://gkbharta44-code.github.io/FAQ/" target="_blank" rel="noopener"><div class="el-ico">❓</div><div><div class="el-title">FAQ</div><div class="el-url">gkbharta44-code.github.io/FAQ/</div></div></a>
+        <a class="ext-link" href="https://gkbharta44-code.github.io/SIAM---Service-Integration-and-Management-/" target="_blank" rel="noopener"><div class="el-ico">🔧</div><div><div class="el-title">SIAM — Service Integration &amp; Management</div><div class="el-url">gkbharta44-code.github.io/SIAM/</div></div></a>
+        <a class="ext-link" href="https://marketplace.delperecom.com/marketplace.html" target="_blank" rel="noopener"><div class="el-ico">🏪</div><div><div class="el-title">Delper Ecom Group Dashboard</div><div class="el-url">marketplace.delperecom.com</div></div></a>
+        <a class="ext-link" href="https://cryptocard-global.onhercules.app/finder/map" target="_blank" rel="noopener"><div class="el-ico">🗺</div><div><div class="el-title">Delper Ecom Proposed Live Point of Sale</div><div class="el-url">cryptocard-global.onhercules.app</div></div></a>
+        <a class="ext-link" href="https://play.google.com/store/apps/details?id=com.delper.ecom.app" target="_blank" rel="noopener"><div class="el-ico">📱</div><div><div class="el-title">Delper Ecom App</div><div class="el-url">play.google.com — Android</div></div></a>
+        <a class="ext-link" href="https://gkbharta44-code.github.io/Master/" target="_blank" rel="noopener"><div class="el-ico">🗺</div><div><div class="el-title">Delper 32 Year Road Map</div><div class="el-url">gkbharta44-code.github.io/Master/</div></div></a>
+        <a class="ext-link" href="https://gkbharta44-code.github.io/Chat-Bot/" target="_blank" rel="noopener"><div class="el-ico">🤖</div><div><div class="el-title">Chatbot</div><div class="el-url">gkbharta44-code.github.io/Chat-Bot/</div></div></a>
+        <a class="ext-link" href="https://gkbharta44-code.github.io/Organogram/" target="_blank" rel="noopener"><div class="el-ico">🏢</div><div><div class="el-title">Organogram</div><div class="el-url">gkbharta44-code.github.io/Organogram/</div></div></a>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <div class="disc" id="disclaimer">
+      <h3>DISCLAIMER — For informational and discussion purposes only</h3>
+      <div class="disc-sec"><h4>Preparation &amp; Purpose</h4><p>This presentation has been prepared by DPR Ecom by consolidating two independent feasibility studies. It is intended solely for informational and discussion purposes. It does not constitute, and should not be construed as, an offer to sell or a solicitation of an offer to buy any securities, financial instruments, tokens, or interests of any kind in any jurisdiction.</p></div>
+      <div class="disc-sec"><h4>Forward-Looking Statements</h4><p>All financial projections, growth assumptions, ecosystem size estimates, revenue forecasts, profit projections, and capital requirement figures are illustrative and forward-looking. Actual results may differ materially. The 2 billion buyer target requires sustained 10× annual growth over five years — aggressive by historical platform standards. No representation is made regarding accuracy, completeness, or achievability.</p></div>
+      <div class="disc-sec"><h4>Key Variables</h4><p>Results depend materially on: (i) ad mediation partner capacity and pricing at 2B-user scale; (ii) regulatory classification of the DPR token across 200+ jurisdictions; (iii) DELPER ecosystem adoption rates; (iv) platform infrastructure execution; (v) macroeconomic conditions; and (vi) competitive responses from existing and new entrants.</p></div>
+      <div class="disc-sec"><h4>PwC Information</h4><p>Information regarding PwC's capabilities is based on publicly available data as of June 2026 and may have changed. PwC's African office coverage was reduced in April 2025; verify current coverage before relying on jurisdiction-specific assessments. Nothing in this document constitutes an endorsement by PwC of DELPER Ecom or its business model.</p></div>
+      <div class="disc-sec"><h4>No Offer / Professional Advice</h4><p>This document does not constitute legal, regulatory, tax, financial, investment, or accounting advice. Recipients should obtain independent professional advice in each relevant jurisdiction before making any decision.</p></div>
+      <div class="disc-sec"><h4>Confidentiality &amp; Liability</h4><p>This presentation is confidential and intended solely for the named recipient. It may not be reproduced or distributed without prior written consent of DELPER Ecom. DELPER Ecom accepts no liability to any person for loss or damage arising from reliance on this document.</p></div>
+    </div>
+
+  </div><!-- /inner -->
+</div><!-- /page-dark -->
+
+<!-- ═══════════════════ CLOSING ═══════════════════════════════════════════ -->
+<div class="closing">
+  <p class="closing-quote">
+    Cities are never sold. The income compounds forever.<br>
+    Delper Ecom becomes, in the most literal and permanent financial sense,<br>
+    <em>the landlord, the banker, and the marketplace of the world.</em>
+  </p>
+  <div class="closing-meta">
+    CONFIDENTIAL — NOT FOR REDISTRIBUTION · Forward-looking projections based on stated programme inputs<br>
+    Independent legal, financial and tax advice required before any decision<br>
+    <a href="https://delperecom.com">delperecom.com</a> · <a href="https://ahanainvestments.com">ahanainvestments.com</a> · © Delper Ecom Holdings Pte Ltd 2026
+  </div>
+</div>
+
+<footer>
+  DELPER Ecom · India · June 2026 · Confidential · Not for Redistribution · Cryptocard Global · GCCP &amp; DPR Business Plan
+</footer>
+
+</body>
+</html>
